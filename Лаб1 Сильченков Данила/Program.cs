@@ -1,12 +1,14 @@
-Console.Write("Введите значение для переменной A: ");
-int a = int.Parse(Console.ReadLine());
-Console.Write("Введите значение для переменной B: ");
-int b = int.Parse(Console.ReadLine());
-int count = 0;
-Console.WriteLine("Числа в порядке убывания: ");
-for (int i = b-1; i>a;i--)
+using System.Text;
+
+string pred = Console.ReadLine();
+string[] slow = pred.Split(' ');
+StringBuilder revers = new StringBuilder();
+for (int i = slow.Length -1; i>= 0; i--)
 {
-    Console.WriteLine(i+" ");
-    count++;
+    revers.Append(slow[i]);
+    if (i > 0)
+    {
+        revers.Append(" ");
+    }
 }
-Console.WriteLine("Количество чисел: "+count);
+Console.WriteLine(revers);
